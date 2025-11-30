@@ -8,13 +8,18 @@
 
 This repository contains the full pipeline for building the **Khmer Orthographic Correction System (KOCS)** — an open-source effort to solve real-world Khmer text noise, including **spacing errors**, **spelling mistakes**, and **phonetic confusions**. The system is powered by **PrahokBART**, a Khmer-specialized sequence-to-sequence model trained from scratch to handle noisy inputs from OCR, social media, and messaging platforms.
 
-The project also includes a **prompt-engineering-based evaluation framework** to compare KOCS against large models (GPT-4o, Claude) in a controlled, structured format.
+## 🔗 **Colab Notebook**
 
-| Quick Start                                                                                       | Training                                                                       |
-| :------------------------------------------------------------------------------------------------ | :----------------------------------------------------------------------------- |
-| **[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](YOUR_COLAB_LINK)** | [`scripts/training/train_prahokbart.py`](scripts/training/train_prahokbart.py) |
+https://colab.research.google.com/drive/1emlzojCH5i0RTArISSyomZy35nyyZoPj?usp=sharing
+https://colab.research.google.com/drive/1h063DWgYBsrQrUI3I3gLhCYkEybS_UEZ?usp=sharing
+https://colab.research.google.com/drive/1Hl1d_x-sRtujbdQMnHkbxoBfORAhEnTO?usp=sharing
+
+https://colab.research.google.com/drive/1OqbHn75Wr8GqeA1LPBJpnaCVZHnYB5AD?usp=sharing
+
+https://colab.research.google.com/drive/1ZWp75Pthij9LlZA7P01YcB55YN4E2Wzk?usp=sharing
 
 ---
+
 
 ## 💡 **Why This Project Matters**
 
@@ -76,124 +81,6 @@ We generate (Noisy_X → Corrected_Y) pairs using linguistically informed error 
 | **Phonetic Confusions** (`PHONETIC_CONFUSION_MAP`) | **10–15%** per char | Handles sound-alike swaps (e.g., ា vs ឲ, s-series vs k-series).     |
 | **Diacritic/Subscript Omission**                   | **20–30%**          | Common in fast smartphone typing.                                   |
 
-### 📏 **Evaluation Framework**
 
-1. **Baseline Model Comparison**
 
-   - Baseline: **mBART50**
-   - Metric: **Character Error Rate (CER)** only
 
-2. **LLM Evaluation: Prompt Engineering**
-   LLMs (GPT-4o, Claude) are queried using:
-
-   - A fixed **structured JSON prompt**
-   - Deterministic formatting for reproducible comparisons
-   - API-based batch evaluation scripts
-
-This allows clean statistical comparisons between:
-
-- PrahokBART
-- Baseline models
-- Proprietary LLMs
-
----
-
-## 📂 **Repository Structure**
-
-```
-khmer-kocs-prahokbart/
-├── data/
-│   ├── raw/                  # Clean Khmer corpora
-│   ├── ground_truth/         # Manually segmented evaluation sets
-│   └── synthetic_data/       # (Noisy_X, Corrected_Y) pairs
-│
-├── scripts/
-│   ├── data_generation/
-│   │   ├── error_injection.py
-│   │   ├── phonetic_map.py
-│   │   └── structural_map.py
-│   ├── training/
-│   │   └── train_prahokbart.py
-│   └── evaluation/
-│       ├── evaluate_hf.py
-│       └── evaluate_llm_api.py
-│
-├── notebooks/
-│   ├── 01_Data_Exploration.ipynb
-│   ├── 02_PrahokBART_Quickstart.ipynb   # Recommended Colab
-│   └── 03_LLM_Prompt_Testing.ipynb
-│
-├── models/
-│   └── checkpoints/
-│
-├── README.md
-└── requirements.txt
-```
-
----
-
-## 🚀 **Installation**
-
-```bash
-git clone https://github.com/YOUR_USERNAME/khmer-kocs-prahokbart.git
-cd khmer-kocs-prahokbart
-pip install -r requirements.txt
-```
-
----
-
-## ▶️ **Quickstart Example**
-
-```python
-from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
-
-tokenizer = AutoTokenizer.from_pretrained("prahokbart")
-model = AutoModelForSeq2SeqLM.from_pretrained("prahokbart")
-
-noisy_text = "ខ្ញុំពិតជាស្រលាញ់អ្នាក់"
-inputs = tokenizer(noisy_text, return_tensors="pt")
-
-outputs = model.generate(**inputs)
-print(tokenizer.decode(outputs[0], skip_special_tokens=True))
-```
-
----
-
-## 🔗 **Colab Notebook**
-
-A full quickstart tutorial is available:
-
-**[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](YOUR_COLAB_LINK)**
-
----
-
-## 🤝 **Contributing**
-
-Contributions are welcome!
-You can contribute via:
-
-- New error maps
-- Dataset improvements
-- New evaluation scripts
-- Better prompt engineering for LLM evaluation
-
-Please open an Issue or Pull Request.
-
----
-
-## 📜 **License**
-
-Choose one:
-
-- MIT License
-- Apache 2.0
-- Creative Commons Attribution 4.0
-
-(If you tell me which one you prefer, I’ll add the license file.)
-
----
-
-## 📧 Contact
-
-**Maintainer:** _Panha (Sethisak San)_
-If you use this project in academic research, please cite and credit appropriately.
