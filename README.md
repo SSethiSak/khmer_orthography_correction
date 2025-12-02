@@ -8,13 +8,13 @@ This repository contains the full pipeline for building the **Khmer Orthographic
 
 ## 🔗 **Colab Notebook**
 
-https://colab.research.google.com/drive/1emlzojCH5i0RTArISSyomZy35nyyZoPj?usp=sharing
-https://colab.research.google.com/drive/1h063DWgYBsrQrUI3I3gLhCYkEybS_UEZ?usp=sharing
-https://colab.research.google.com/drive/1Hl1d_x-sRtujbdQMnHkbxoBfORAhEnTO?usp=sharing
+mBART Notebook: https://colab.research.google.com/drive/1McOajSM5o45u4g_HJnUfMEZhTe4jjZPx?usp=sharing 
+PrahokBART Notebook: https://colab.research.google.com/drive/1h063DWgYBsrQrUI3I3gLhCYkEybS_UEZ?usp=sharing
+NLLB Notebook: https://colab.research.google.com/drive/1Hl1d_x-sRtujbdQMnHkbxoBfORAhEnTO?usp=sharing
 
-https://colab.research.google.com/drive/1OqbHn75Wr8GqeA1LPBJpnaCVZHnYB5AD?usp=sharing
+Evaluation of the 3 models: https://colab.research.google.com/drive/1OqbHn75Wr8GqeA1LPBJpnaCVZHnYB5AD?usp=sharing
 
-https://colab.research.google.com/drive/1ZWp75Pthij9LlZA7P01YcB55YN4E2Wzk?usp=sharing
+Data Corruption Pipeline: https://colab.research.google.com/drive/1ZWp75Pthij9LlZA7P01YcB55YN4E2Wzk?usp=sharing
 
 ---
 
