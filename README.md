@@ -1,7 +1,5 @@
 # **Khmer Orthographic Correction System (KOCS)**
 
-### _PrahokBART: Specialized Khmer Sequence-to-Sequence Model for Noise-Robust Text Correction_
-
 ---
 
 ## 🌐 **Project Overview**
